@@ -3,3 +3,5 @@
 1. Run the either the Main .class file or the jar files
 2. Follow on screen prompts!
 3. Once the program is done running you should have a nice text file with all the info needed for your dedicated server!
+
+When you choose your destination for your text file to be created, it will havefile name "ZomboididModInfo.txt"

@@ -26,8 +26,8 @@ public class Main_Zomboid {
   
  
         //Initializing variables needed to grab file paths and write out
- 	//Some variables are Initialized later due to dependance on some of the loops
-	String Workshopitems = "WorkshopItems=";
+ 	    //Some variables are Initialized later due to dependance on some of the loops
+	    String Workshopitems = "WorkshopItems=";
         String ModIds = "ModIds=";
         String Maplist = "Map=";
         String osName = System.getProperty("os.name");
@@ -35,7 +35,7 @@ public class Main_Zomboid {
         String prepath = null;
         String preDest = null;
         String selectedDirectory;
- 	String dest = null;
+ 	    String dest = null;
         Boolean isUnix = null;
  	
         //=======================================================================================================
@@ -43,14 +43,14 @@ public class Main_Zomboid {
         //=======================================================================================================
  	
         //We check what operating system the user is runnning so that we 
-	//can correct filepaths accordingly
+	    //can correct filepaths accordingly
         if (osName.contains("Windows")) {
             isUnix = false;
         } else if (osName.contains("Mac") || osName.contains("Linux")) {
             isUnix = true;
         }
  
- 	//First try section to grab directory of zomboid workshop folders
+ 	    //First try section to grab directory of zomboid workshop folders
         try {
             selectedDirectory = fc.selectDirectory();
             prepath = selectedDirectory;
@@ -60,7 +60,7 @@ public class Main_Zomboid {
  
  
         //If the user is using windows, replaces backslashes with 
- 	//forward slashes to make path usable
+ 	    //forward slashes to make path usable
         if (isUnix == false) {
             path = prepath.replace("\\", "/");
         }

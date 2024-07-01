@@ -69,9 +69,8 @@ public class Main_Zomboid {
         }
         //Message box two to the user, explaining what to do
         JOptionPane.showMessageDialog(null, msg2, title, messageType);
- 	
- 	//Second try block, we now look for the destination to place 
- 	//the future text file containing our info
+ 	 	//Second try block, we now look for the destination to place 
+ 	    //the future text file containing our info
         try {
             selectedDirectory = fc.selectDirectory();
             preDest = selectedDirectory;
@@ -80,8 +79,7 @@ public class Main_Zomboid {
         }
  
         //If the user is using windows, replaces backslashes with 
- 	//forward slashes to make path usable
- 	//May need to add the /*.txt to the windows destination
+ 	    //forward slashes to make path usable
         if (isUnix == false) {
             dest = preDest.replace("\\", "/")+"/ZomboididModInfo.txt";
         }
@@ -108,7 +106,7 @@ public class Main_Zomboid {
         //=======================================================================================================
  
         //Loop to create the full path for each mod folder and update 
-	//Workshopitems with every mod folder ID as well as the path for each mod.info file
+	    //Workshopitems with every mod folder ID as well as the path for each mod.info file
         for (int i = 0; i < numMods; i++) {
             modDir[i] = path +"/"+ modFoldID[i] + "/";
             modSubParent[i] = modDir[i] + "mods/";
@@ -118,26 +116,26 @@ public class Main_Zomboid {
         }
  
         //Loop to read each mod.info file and update ModIds with the ID of each mod
-	for (int j = 0 ; j < numMods; j++) {
-		BufferedReader in = new BufferedReader(new FileReader(modSubDir[j]));
-		while (line != null) {
-			line = in.readLine();
-			if (line.contains(kw1)) {
-				ModIds += line.replaceAll(kw1, "") + ";";
-				line = "empty";
-				break;
+	    for (int j = 0 ; j < numMods; j++) {
+		    BufferedReader in = new BufferedReader(new FileReader(modSubDir[j]));
+		    while (line != null) {
+			    line = in.readLine();
+			    if (line.contains(kw1)) {
+				    ModIds += line.replaceAll(kw1, "") + ";";
+				    line = "empty";
+				    break;
 			}
 		}
 	} 
         //Here we make a loop that will create a path for EVERY mod 
-	//As IF it was a map mod, further ahead we will check if the path is valid
+	    //As IF it was a map mod, further ahead we will check if the path is valid
         for (int m = 0; m < numMods; m++) {
             modMapPaths[m] = modSubParent[m] + modSubFoldsFile[m].list()[0] + "/media/maps/";
             modMapstemp[m] = new File(modMapPaths[m]);
         }
  
         //We now check if the path is valid, if it is we get the 
-	//folders in that directory which have the map names needed and grab them
+	    //folders in that directory which have the map names needed and grab them
         for (int x = 0; x < numMods; x++) {
             try {
                 modMaps.add(modMapstemp[x].list()[0]); 
@@ -153,8 +151,8 @@ public class Main_Zomboid {
         }
         System.out.println(Maplist);
  
-	//Finally prepares the text content to be written to the file 
-	//by storing needed info into a string
+	    //Finally prepares the text content to be written to the file 
+	    //by storing needed info into a string
         String textContent = Workshopitems + "\n" + "\n" + ModIds + "\n" + "\n" + Maplist;
  
         //=======================================================================================================

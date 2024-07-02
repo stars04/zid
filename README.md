@@ -9,4 +9,4 @@ When you choose your destination for your text file to be created, it will havef
 As a note I originally intended this to just be something to send to individuals I personally know, the goal was make the program accessible via a gui hence the use of jfilechooser.
 
 I later decided, why not upload it?
-If anyone ever sees it and its usefull, hope you enjoy!
+If anyone ever sees it and its usefull, hope you enjoy!!
